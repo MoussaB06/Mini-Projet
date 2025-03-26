@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /*  1rem = 16px */
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #000000;
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  padding: 3.5rem 4.8rem;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  margin-right: 6px;
+}
+.logoName {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+main {
+  flex-grow: 1;
+  margin: 0 4.8rem 6rem 4.8rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main h1 {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.espace_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.espace_conducteur,
+.espace_passager {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Centre horizontalement */
+  align-items: center; /* Centre verticalement */
+  height: 22rem;
+  width: 23rem;
+  color: rgb(0, 0, 0); /* Pour une meilleure lisibilité sur fond coloré */
+  border-radius: 8px; /* Facultatif pour des bords arrondis */
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  box-shadow: #000000;
+  margin-bottom: 2.4rem;
+}
+
+.espace_conducteur {
+  margin-left: 1.6rem;
+}
+
+.espace_passager {
+  margin-right: 1.6rem;
+}
+
+.radio-btn {
+  position: absolute;
+  top: 1rem; /* Décalage depuis le haut */
+  right: 1rem; /* Décalage depuis la gauche */
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+}
+
+.text {
+  font-size: 2rem;
+}
+
+.btn {
+  margin: 0 auto;
+  padding: 1.2rem;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 1.5rem;
+  margin-bottom: -0.8rem;
+}
+
+.btn:hover {
+  background-color: #45a049;
+}
