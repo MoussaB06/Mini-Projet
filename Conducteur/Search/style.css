@@ -211,3 +211,11 @@ header {
     padding-right: 0;
   }
 }
+
+.trip-card[data-status="complet"] .status {
+  color: #000;
+}
+
+.trip-card[data-status="annule"] .status {
+  color: red;
+}

@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
     input.addEventListener("input", function () {
       const val = input.value.toLowerCase();
       suggestionsBox.innerHTML = "";
-
       if (val.length === 0) return;
 
       const matched = villesAlgeriennes.filter((v) =>
@@ -63,7 +62,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Fermer si clic en dehors
     document.addEventListener("click", (e) => {
       if (!input.contains(e.target) && !suggestionsBox.contains(e.target)) {
         suggestionsBox.innerHTML = "";
@@ -91,9 +89,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ✅ Validation du formulaire
+  // ✅ Validation du formulaire + affichage message pendant 5s
   form.addEventListener("submit", function (e) {
     e.preventDefault();
+
     confirmation.classList.remove("hidden");
+
+    setTimeout(() => {
+      confirmation.classList.add("hidden");
+    }, 5000);
   });
 });

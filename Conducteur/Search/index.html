@@ -8,14 +8,16 @@
   </head>
   <body>
     <header>
-      <div class="header-left">
+      <div class="header-left" id="goHome" style="cursor: pointer">
         <img src="../../img/Logo.png" alt="Logo" class="logo" />
         <span class="brand">CoVroom</span>
       </div>
       <div class="header-right">
-        <a href="#" class="rechercher">Rechercher</a>
-        <a href="../Creer trajet/index.html" class="publish-btn"
-          >+ Publier un trajet</a
+        <span class="rechercher" id="goSearch" style="cursor: pointer"
+          >Rechercher</span
+        >
+        <span class="publish-btn" id="goPublish" style="cursor: pointer"
+          >+ Publier un trajet</span
         >
         <img src="../../img/user.png" class="user-icon" />
       </div>
@@ -43,8 +45,8 @@
 
       <!-- Résultats -->
       <main class="results">
-        <!-- Exemple d'une carte trajet -->
-        <div class="trip-card">
+        <!-- ✅ Cliquable -->
+        <div class="trip-card" data-status="active">
           <div class="times">
             <span>6:45</span>
             <span>—— 9h30 ——</span>
@@ -53,17 +55,18 @@
           <div class="cities">
             <div>
               <strong>Alger</strong><br />
-              <small>Gare routière Kharrouba</small>
+              <small>Kharrouba</small>
             </div>
             <div>
               <strong>Béjaïa</strong><br />
-              <small>Gare Routière Centrale</small>
+              <small>Centre-ville</small>
             </div>
           </div>
           <div class="price">1000 DA</div>
         </div>
 
-        <div class="trip-card">
+        <!-- ❌ Complet -->
+        <div class="trip-card" data-status="complet">
           <div class="times">
             <span>7:30</span>
             <span>—— 11h00 ——</span>
@@ -72,52 +75,54 @@
           <div class="cities">
             <div>
               <strong>Oran</strong><br />
-              <small>Gare Routière Est</small>
+              <small>Gare Est</small>
             </div>
             <div>
               <strong>Tlemcen</strong><br />
-              <small>Gare Routière Centrale</small>
+              <small>Centre-ville</small>
             </div>
           </div>
           <div class="status complet">Complet</div>
         </div>
 
-        <div class="trip-card">
+        <!-- ❌ Annulé -->
+        <div class="trip-card" data-status="annule">
           <div class="times">
-            <span>8:00</span>
-            <span>—— 12h15 ——</span>
-            <span>14:45</span>
+            <span>9:10</span>
+            <span>—— 12h20 ——</span>
+            <span>14:30</span>
           </div>
           <div class="cities">
             <div>
               <strong>Constantine</strong><br />
-              <small>Gare Sidi Mabrouk</small>
+              <small>Sidi Mabrouk</small>
             </div>
             <div>
               <strong>Annaba</strong><br />
-              <small>Gare Routière El-Hadjar</small>
+              <small>El-Hadjar</small>
             </div>
           </div>
-          <div class="price">850 DA</div>
+          <div class="status annule">Annulé</div>
         </div>
 
-        <div class="trip-card">
+        <!-- ✅ Cliquable -->
+        <div class="trip-card" data-status="active">
           <div class="times">
-            <span>5:30</span>
-            <span>—— 8h00 ——</span>
-            <span>10:20</span>
+            <span>10:00</span>
+            <span>—— 13h00 ——</span>
+            <span>15:30</span>
           </div>
           <div class="cities">
             <div>
               <strong>Sétif</strong><br />
-              <small>Station El Eulma</small>
+              <small>El Eulma</small>
             </div>
             <div>
               <strong>Batna</strong><br />
-              <small>Gare Routière Centrale</small>
+              <small>Centre-ville</small>
             </div>
           </div>
-          <div class="status complet">Complet</div>
+          <div class="price">1500 DA</div>
         </div>
       </main>
     </div>
