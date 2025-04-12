@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil | CoVroom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="../../img/Logo.png" alt="Logo" class="logo" />
+        <span class="brand">CoVroom</span>
+      </div>
+      <div class="header-right">
+        <a href="../Creer trajet/index.html" class="publish-btn"
+          >+ Publier un trajet</a
+        >
+        <div class="user-menu">
+          <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
+          <div class="dropdown hidden" id="dropdownMenu">
+            <a href="#">👤 Profil</a>
+            <a href="#">🛣️ Vos trajets</a>
+            <hr />
+            <a href="#" class="logout">↩️ Déconnexion</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <h1 class="title">Prêt à faire la route ?</h1>
+      <form id="searchForm">
+        <div class="form-row">
+          <div class="input-block">
+            <span>📍</span>
+            <input type="text" placeholder="Départ" required />
+          </div>
+          <div class="input-block">
+            <span>📍</span>
+            <input type="text" placeholder="Arrivé" required />
+          </div>
+          <div class="input-block">
+            <span>📅</span>
+            <input type="date" required />
+          </div>
+          <div class="input-block">
+            <span>🧍</span>
+            <input type="number" placeholder="Passagers" min="1" required />
+          </div>
+          <button type="submit" class="search-btn">Rechercher</button>
+        </div>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
