@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ".espace_passager, .espace_conducteur"
   );
   const button = document.querySelector(".btn");
+  const radios = document.querySelectorAll(".radio-btn");
 
   // Désactiver le bouton au départ
   button.disabled = true;
@@ -11,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   roleCards.forEach((card, index) => {
     card.addEventListener("click", () => {
-      // Sélectionne le bouton radio à l'intérieur
       const radio = card.querySelector(".radio-btn");
       radio.checked = true;
 
@@ -27,9 +27,25 @@ document.addEventListener("DOMContentLoaded", function () {
         button.textContent = "Continuer en tant que Conducteur";
       }
 
-      // Retirer le style "sélectionné" des autres cartes
+      // Mise à jour visuelle
       roleCards.forEach((c) => c.classList.remove("active-card"));
       card.classList.add("active-card");
     });
+  });
+
+  // ✅ Redirection selon le rôle sélectionné
+  button.addEventListener("click", () => {
+    const selected = [...radios].find((r) => r.checked);
+
+    if (!selected) {
+      alert("Veuillez sélectionner un rôle !");
+      return;
+    }
+
+    if (selected.value === "conducteur") {
+      window.location.href = "../Conducteur/Completer info/index.html";
+    } else if (selected.value === "passager") {
+      window.location.href = "../Passager/index.html"; // à créer plus tard
+    }
   });
 });

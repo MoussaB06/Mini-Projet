@@ -110,8 +110,6 @@ input.error {
   flex: 1;
 }
 
-/* === PREVIEW DES IMAGES === */
-
 .preview-grid {
   display: flex;
   flex-wrap: wrap;
@@ -149,8 +147,6 @@ input.error {
 .preview-image-wrapper:hover .delete-btn {
   display: block;
 }
-
-/* === BOUTON === */
 
 .submit-btn {
   display: block;
