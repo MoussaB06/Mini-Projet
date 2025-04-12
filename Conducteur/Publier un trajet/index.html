@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer un trajet | CoVroom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a href="../Home/index.html" class="header-left">
+        <img src="../../img/Logo.png" alt="Logo" class="logo" />
+        <span class="brand">CoVroom</span>
+      </a>
+      <div class="header-right">
+        <a href="../Home/index.html" class="rechercher">Rechercher</a>
+        <img src="../../img/user.png" class="user-icon" />
+      </div>
+    </header>
+
+    <main class="create-ride">
+      <h1>Créer un trajet</h1>
+
+      <form id="createRideForm" class="grid-form">
+        <!-- Ligne 1 -->
+        <div class="input-block">
+          <input
+            type="text"
+            placeholder="📍 Départ"
+            id="depart"
+            autocomplete="off"
+            required
+          />
+          <ul id="suggest-depart" class="suggestions"></ul>
+        </div>
+
+        <div class="date-heure">
+          <input type="date" required />
+          <input type="time" required />
+        </div>
+
+        <!-- Ligne 2 -->
+        <div class="input-block">
+          <input
+            type="text"
+            placeholder="📍 Arrivée"
+            id="arrivee"
+            autocomplete="off"
+            required
+          />
+          <ul id="suggest-arrivee" class="suggestions"></ul>
+        </div>
+        <input
+          type="number"
+          placeholder="👤 Nombre de passagers"
+          min="1"
+          required
+        />
+
+        <!-- Ligne 3 : Marque & Modèle -->
+        <input type="text" placeholder="🚗 Marque du véhicule" required />
+        <input type="text" placeholder="📘 Modèle du véhicule" required />
+
+        <!-- Ligne 4 : Dropdowns -->
+        <div class="dropdown-block">
+          <button type="button" class="dropdown-toggle">
+            Niveau de confort
+          </button>
+          <div class="dropdown-content">
+            <label><input type="checkbox" /> Climatisation</label>
+            <label><input type="checkbox" /> Sièges inclinables</label>
+            <label><input type="checkbox" /> Prises USB</label>
+            <label><input type="checkbox" /> Wifi</label>
+          </div>
+        </div>
+
+        <div class="dropdown-block">
+          <button type="button" class="dropdown-toggle">
+            Options spécifiques
+          </button>
+          <div class="dropdown-content">
+            <label
+              ><input type="checkbox" /> Autorisation de manger/boire</label
+            >
+            <label><input type="checkbox" /> Musique personnalisée</label>
+            <label><input type="checkbox" /> Animaux acceptés</label>
+            <label><input type="checkbox" /> Autorisation de fumer</label>
+          </div>
+        </div>
+
+        <!-- Prix -->
+        <input type="text" placeholder="💰 Prix par personne" required />
+
+        <!-- Bouton -->
+        <button type="submit" class="submit-btn">Publier le trajet</button>
+
+        <!-- Confirmation -->
+        <div id="confirmation" class="confirmation hidden">
+          ✅ Trajet publié avec succès !
+          <a href="../Search/index.html" class="link">Voir le trajet</a>
+        </div>
+      </form>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

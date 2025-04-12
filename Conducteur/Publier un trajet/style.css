@@ -1,0 +1,272 @@
+:root {
+  --green: #4caf50;
+  --gray: #d9d9d9;
+  --bg: #fffcf5;
+  --black: #000000;
+  --dark: #333030;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /* background-color: #fffcf5 !important; */
+  color: var(--dark);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  /* background-color: var(--bg); */
+  border-bottom: 1px solid #ccc;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo {
+  height: 30px;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--black);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.rechercher {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.user-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  background-color: #ccc;
+  object-fit: cover;
+}
+
+main.create-ride {
+  padding: 3rem;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+.grid-form {
+  display: grid;
+  grid-template-areas:
+    "depart dateheure"
+    "arrivee passagers"
+    "marque modele"
+    "dropdown1 dropdown1"
+    "dropdown2 dropdown2"
+    "prix prix"
+    "submit submit"
+    "confirm confirm";
+  grid-template-columns: 60% 40%;
+  gap: 1.5rem;
+}
+
+.input-block {
+  position: relative;
+}
+
+.input-block input {
+  width: 100%;
+}
+
+#depart {
+  grid-area: depart;
+}
+.date-heure {
+  grid-area: dateheure;
+  display: flex;
+  gap: 1rem;
+}
+#arrivee {
+  grid-area: arrivee;
+}
+input[type="number"] {
+  grid-area: passagers;
+}
+input[placeholder*="Marque"] {
+  grid-area: marque;
+}
+input[placeholder*="Modèle"] {
+  grid-area: modele;
+}
+input[placeholder*="Prix"] {
+  grid-area: prix;
+}
+.submit-btn {
+  grid-area: submit;
+}
+.confirmation {
+  grid-area: confirm;
+}
+.dropdown-block:nth-of-type(1) {
+  grid-area: dropdown1;
+}
+.dropdown-block:nth-of-type(2) {
+  grid-area: dropdown2;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="time"] {
+  padding: 1rem;
+  border: 2px solid #888;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: var(--white);
+  transition: border-color 0.2s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--green);
+}
+
+.dropdown-block {
+  position: relative;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--white);
+  border: 1px solid #888;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border 0.2s ease;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+  border: 2px solid var(--green);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dropdown-block.open .dropdown-content {
+  display: block;
+}
+
+.dropdown-content label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.dropdown-content input[type="checkbox"] {
+  accent-color: var(--green);
+}
+
+.submit-btn {
+  padding: 1rem 2rem;
+  background-color: var(--green);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.confirmation {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  background-color: #c8facc;
+  color: #000;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmation .link {
+  color: var(--green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Autocomplétion */
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 10rem;
+  overflow-y: auto;
+  z-index: 20;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.2rem;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions li {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.suggestions li:hover {
+  background-color: var(--gray);
+}
+
+.suggestions:empty {
+  display: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}

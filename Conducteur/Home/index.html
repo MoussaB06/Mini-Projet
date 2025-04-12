@@ -13,7 +13,7 @@
         <span class="brand">CoVroom</span>
       </div>
       <div class="header-right">
-        <a href="../Creer trajet/index.html" class="publish-btn"
+        <a href="../Publier un trajet/index.html" class="publish-btn"
           >+ Publier un trajet</a
         >
         <div class="user-menu">
@@ -34,11 +34,25 @@
         <div class="form-row">
           <div class="input-block">
             <span>📍</span>
-            <input type="text" placeholder="Départ" required />
+            <input
+              type="text"
+              id="depart"
+              placeholder="Départ"
+              autocomplete="off"
+              required
+            />
+            <ul class="suggestions" id="suggest-depart"></ul>
           </div>
           <div class="input-block">
             <span>📍</span>
-            <input type="text" placeholder="Arrivé" required />
+            <input
+              type="text"
+              id="arrivee"
+              placeholder="Arrivée"
+              autocomplete="off"
+              required
+            />
+            <ul class="suggestions" id="suggest-arrivee"></ul>
           </div>
           <div class="input-block">
             <span>📅</span>

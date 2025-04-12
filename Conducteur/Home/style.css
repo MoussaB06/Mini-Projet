@@ -16,13 +16,13 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   color: var(--dark);
   font-size: 1rem;
 }
 
 header {
-  background-color: var(--bg);
+  /* background-color: var(--bg); */
   border-bottom: 0.0625rem solid #ccc;
   padding: 0.9375rem 1.875rem; /* 15px 30px */
   display: flex;
@@ -54,13 +54,16 @@ header {
 
 .publish-btn {
   text-decoration: none;
-  color: var(--green-light);
+  color: var(--green);
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
 .user-menu {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .user-icon {
@@ -72,10 +75,10 @@ header {
   object-fit: cover;
 }
 
-/* Dropdown menu */
+/* Dropdown bien positionné sous l’avatar */
 .dropdown {
   position: absolute;
-  top: 2.1875rem;
+  top: calc(100% + 0.5rem); /* juste en dessous de l’icône */
   right: 0;
   background-color: var(--bg);
   border: 0.0625rem solid #ccc;
@@ -84,18 +87,28 @@ header {
   min-width: 10rem;
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
   z-index: 10;
+  text-align: left;
 }
-
 .dropdown a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem;
   text-decoration: none;
   color: var(--dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s;
 }
 
 .dropdown a.logout {
   color: red;
-  font-weight: bold;
+  font-weight: 500; /* pas trop bold */
+}
+
+.dropdown a:hover {
+  background-color: var(--gray);
+  border-radius: 0.25rem;
 }
 
 .hidden {
@@ -133,6 +146,7 @@ form {
 }
 
 .input-block {
+  position: relative;
   display: flex;
   align-items: center;
   /* background-color: var(--gray); */
@@ -198,4 +212,39 @@ form {
     width: 10rem;
     align-self: stretch;
   }
+}
+
+.suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: var(--white);
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 10rem;
+  overflow-y: auto;
+  z-index: 20;
+  list-style: none;
+  padding: 0;
+  margin-top: 0.2rem;
+  border-radius: 0 0 5px 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions li {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.suggestions li:hover {
+  background-color: var(--gray);
+}
+.autocomplete-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestions:empty {
+  display: none;
 }
