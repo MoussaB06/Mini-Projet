@@ -13,18 +13,13 @@
         <span class="brand">CoVroom</span>
       </div>
       <div class="header-right">
-        <span class="rechercher" id="goSearch" style="cursor: pointer"
-          >Rechercher</span
-        >
-        <span class="publish-btn" id="goPublish" style="cursor: pointer"
-          >+ Publier un trajet</span
-        >
+        <span class="rechercher" id="goSearch">Rechercher</span>
+        <span class="publish-btn" id="goPublish">+ Publier un trajet</span>
         <img src="../../img/user.png" class="user-icon" />
       </div>
     </header>
 
     <div class="search-container">
-      <!-- Filtres -->
       <aside class="sidebar">
         <h2>Trier par</h2>
         <div class="filter-group">
@@ -43,84 +38,74 @@
         </div>
       </aside>
 
-      <!-- Résultats -->
       <main class="results">
-        <!-- ✅ Cliquable -->
-        <div class="trip-card" data-status="active">
+        <!-- cartes avec data-status -->
+        <div
+          class="trip-card"
+          data-status="active"
+          data-depart="Alger"
+          data-arrivee="Béjaïa"
+          data-prix="1000 DA"
+          data-heure-depart="6:45"
+          data-heure-arrivee="12:00"
+          data-marque="Peugeot"
+          data-modele="301"
+          data-confort="Climatisation"
+          data-options="Musique personnalisée, Animaux acceptés"
+        >
           <div class="times">
-            <span>6:45</span>
-            <span>—— 9h30 ——</span>
-            <span>12:00</span>
+            <span>6:45</span><span>—— 9h30 ——</span><span>12:00</span>
           </div>
           <div class="cities">
-            <div>
-              <strong>Alger</strong><br />
-              <small>Kharrouba</small>
-            </div>
-            <div>
-              <strong>Béjaïa</strong><br />
-              <small>Centre-ville</small>
-            </div>
+            <div><strong>Alger</strong><br /><small>Kharrouba</small></div>
+            <div><strong>Béjaïa</strong><br /><small>Centre-ville</small></div>
           </div>
           <div class="price">1000 DA</div>
         </div>
 
-        <!-- ❌ Complet -->
         <div class="trip-card" data-status="complet">
           <div class="times">
-            <span>7:30</span>
-            <span>—— 11h00 ——</span>
-            <span>13:15</span>
+            <span>7:30</span><span>—— 11h00 ——</span><span>13:15</span>
           </div>
           <div class="cities">
-            <div>
-              <strong>Oran</strong><br />
-              <small>Gare Est</small>
-            </div>
-            <div>
-              <strong>Tlemcen</strong><br />
-              <small>Centre-ville</small>
-            </div>
+            <div><strong>Oran</strong><br /><small>Gare Est</small></div>
+            <div><strong>Tlemcen</strong><br /><small>Centre-ville</small></div>
           </div>
           <div class="status complet">Complet</div>
         </div>
 
-        <!-- ❌ Annulé -->
         <div class="trip-card" data-status="annule">
           <div class="times">
-            <span>9:10</span>
-            <span>—— 12h20 ——</span>
-            <span>14:30</span>
+            <span>9:10</span><span>—— 12h20 ——</span><span>14:30</span>
           </div>
           <div class="cities">
             <div>
-              <strong>Constantine</strong><br />
-              <small>Sidi Mabrouk</small>
+              <strong>Constantine</strong><br /><small>Sidi Mabrouk</small>
             </div>
-            <div>
-              <strong>Annaba</strong><br />
-              <small>El-Hadjar</small>
-            </div>
+            <div><strong>Annaba</strong><br /><small>El-Hadjar</small></div>
           </div>
           <div class="status annule">Annulé</div>
         </div>
 
-        <!-- ✅ Cliquable -->
-        <div class="trip-card" data-status="active">
+        <div
+          class="trip-card"
+          data-status="active"
+          data-depart="Alger"
+          data-arrivee="Béjaïa"
+          data-prix="1000 DA"
+          data-heure-depart="6:45"
+          data-heure-arrivee="12:00"
+          data-marque="Peugeot"
+          data-modele="301"
+          data-confort="Climatisation"
+          data-options="Musique personnalisée, Animaux acceptés"
+        >
           <div class="times">
-            <span>10:00</span>
-            <span>—— 13h00 ——</span>
-            <span>15:30</span>
+            <span>10:00</span><span>—— 13h00 ——</span><span>15:30</span>
           </div>
           <div class="cities">
-            <div>
-              <strong>Sétif</strong><br />
-              <small>El Eulma</small>
-            </div>
-            <div>
-              <strong>Batna</strong><br />
-              <small>Centre-ville</small>
-            </div>
+            <div><strong>Sétif</strong><br /><small>El Eulma</small></div>
+            <div><strong>Batna</strong><br /><small>Centre-ville</small></div>
           </div>
           <div class="price">1500 DA</div>
         </div>

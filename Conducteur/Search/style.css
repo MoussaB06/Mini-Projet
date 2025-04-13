@@ -20,17 +20,16 @@ body {
 
 body {
   font-family: Arial, sans-serif;
-  /* background-color: var(--bg); */
   color: var(--dark);
+  /* background-color: var(--bg); */
 }
 
-/* ----- HEADER ----- */
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* background-color: var(--bg); */
   border-bottom: 1px solid #ccc;
 }
 
@@ -73,21 +72,19 @@ header {
 .publish-btn {
   color: var(--green);
   font-weight: bold;
-  text-decoration: none;
   font-size: 1rem;
-  display: flex;
-  align-items: center;
+  cursor: pointer;
 }
 
 .user-icon {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  background-color: #ccc;
   object-fit: cover;
+  background-color: #ccc;
 }
 
-/* ----- LAYOUT ----- */
+/* LAYOUT */
 .search-container {
   display: flex;
   gap: 2rem;
@@ -96,7 +93,7 @@ header {
   align-items: flex-start;
 }
 
-/* ----- SIDEBAR ----- */
+/* SIDEBAR */
 .sidebar {
   width: 250px;
   padding-right: 1rem;
@@ -134,7 +131,7 @@ header {
   accent-color: var(--green);
 }
 
-/* ----- RÉSULTATS ----- */
+/* RESULTS */
 .results {
   flex: 1;
   display: flex;
@@ -152,6 +149,11 @@ header {
   align-items: center;
   gap: 2rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.trip-card:hover {
+  transform: scale(1.01);
 }
 
 .trip-card .times {
@@ -160,9 +162,6 @@ header {
   text-align: center;
   color: #000;
   min-width: 6rem;
-}
-.trip-card .times strong {
-  font-weight: bold;
 }
 
 .trip-card .cities {
@@ -200,7 +199,14 @@ header {
   color: red;
 }
 
-/* ----- RESPONSIVE ----- */
+/* DISABLED */
+.trip-card[data-status="complet"],
+.trip-card[data-status="annule"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .search-container {
     flex-direction: column;
@@ -210,12 +216,4 @@ header {
     border-right: none;
     padding-right: 0;
   }
-}
-
-.trip-card[data-status="complet"] .status {
-  color: #000;
-}
-
-.trip-card[data-status="annule"] .status {
-  color: red;
 }

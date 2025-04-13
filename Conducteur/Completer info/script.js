@@ -109,9 +109,9 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
 
-        if (file.size < 100 * 1024) {
+        if (file.size < 52 * 1024 || file.size > 60 * 1024) {
           alert(
-            "L’image semble trop légère. Veuillez fournir un document lisible."
+            "La taille de l’image doit être comprise entre 52 Ko et 60 Ko. Veuillez fournir un document clair et lisible."
           );
           return;
         }
