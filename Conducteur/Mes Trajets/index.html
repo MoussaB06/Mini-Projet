@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mes trajets | CoVroom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <a href="../Home/index.html">
+          <img src="../../img/Logo.png" alt="Logo" class="logo" />
+          <span class="brand">CoVroom</span>
+        </a>
+      </div>
+      <div class="header-right">
+        <!-- <a href="../Home/index.html" class="rechercher">Rechercher</a> -->
+        <a href="../Publier un trajet/index.html" class="publish-btn"
+          >+ Publier un trajet</a
+        >
+        <div class="user-menu">
+          <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
+          <div class="dropdown hidden" id="dropdownMenu">
+            <a href="../Profil/index.html">👤 Profil</a>
+            <a href="../Mes Trajets/index.html">🛣️ Vos trajets</a>
+            <hr />
+            <a href="../../Login/index.html" class="logout">↩️ Déconnexion</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="mes-trajets">
+      <h1>Mes trajets</h1>
+      <main class="results">
+        <div class="trip-card" data-status="active">
+          <button class="delete-btn" title="Supprimer le trajet">✖</button>
+          <div class="times">
+            <span>7:30</span> <span>--------</span> <span>18:40</span>
+          </div>
+          <div class="cities">
+            <div>
+              <strong>Paris</strong>
+              <small>Gare routière Bercy-seine</small>
+            </div>
+            <div>
+              <strong>Marseille</strong>
+              <small>Gare routière Saint-charles</small>
+            </div>
+          </div>
+          <div class="price">29.99$</div>
+        </div>
+
+        <div class="trip-card" data-status="complet">
+          <button class="delete-btn" title="Supprimer le trajet">✖</button>
+          <div class="times">
+            <span>6:23</span> <span>--------</span> <span>19:00</span>
+          </div>
+          <div class="cities">
+            <div>
+              <strong>Lyon</strong><small>Gare routière Bercy-seine</small>
+            </div>
+            <div>
+              <strong>Palermo</strong><small>Gare routière Saint-charles</small>
+            </div>
+          </div>
+          <div class="status complet">Complet</div>
+        </div>
+
+        <div class="trip-card" data-status="annule">
+          <button class="delete-btn" title="Supprimer le trajet">✖</button>
+          <div class="times"><span>4:45 </span>--------<span> 16:00</span></div>
+          <div class="cities">
+            <div>
+              <strong>Lyon</strong><small>Gare routière Bercy-seine</small>
+            </div>
+            <div>
+              <strong>Palermo</strong><small>Gare routière Saint-charles</small>
+            </div>
+          </div>
+          <div class="status annule">Annulé</div>
+        </div>
+      </main>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,10 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // ==== Panel utilisateur ====
+  // ====== Panel utilisateur ======
   const userIcon = document.getElementById("toggleMenu");
   const dropdown = document.getElementById("dropdownMenu");
 
-  userIcon?.addEventListener("click", () => {
-    dropdown?.classList.toggle("hidden");
+  userIcon?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("hidden");
   });
 
   document.addEventListener("click", (e) => {
@@ -13,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ==== Dropdowns confort et options ====
+  // ====== Dropdowns ======
   document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
     btn.addEventListener("click", () => {
       const block = btn.parentElement;
@@ -29,26 +30,98 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==== Confirmation de publication ====
+  // ====== Préremplissage des champs ======
   const form = document.getElementById("createRideForm");
-  const confirmation = document.getElementById("confirmation");
+  const submitBtn = form.querySelector(".submit-btn");
 
+  const defaultData = {
+    depart: "Alger – Gare Routière Kharrouba",
+    arrivee: "Béjaïa – Gare Routière Tafsout",
+    date: "2024-05-10",
+    time: "06:45",
+    passagers: 3,
+    marque: "Peugeot",
+    modele: "301",
+    prix: "1000 DA",
+    habitual: true,
+  };
+
+  const fields = {
+    depart: document.getElementById("depart"),
+    arrivee: document.getElementById("arrivee"),
+    date: form.querySelector('input[type="date"]'),
+    time: form.querySelector('input[type="time"]'),
+    passagers: form.querySelector('input[type="number"]'),
+    marque: form.querySelector('input[placeholder*="Marque"]'),
+    modele: form.querySelector('input[placeholder*="Modèle"]'),
+    prix: form.querySelector('input[placeholder*="Prix"]'),
+    habitual: document.getElementById("habituel-ride"),
+  };
+
+  // Remplir les champs
+  fields.depart.value = defaultData.depart;
+  fields.arrivee.value = defaultData.arrivee;
+  fields.date.value = defaultData.date;
+  fields.time.value = defaultData.time;
+  fields.passagers.value = defaultData.passagers;
+  fields.marque.value = defaultData.marque;
+  fields.modele.value = defaultData.modele;
+  fields.prix.value = defaultData.prix;
+  fields.habitual.checked = defaultData.habitual;
+
+  // Désactiver bouton tant que pas modifié
+  submitBtn.disabled = true;
+  submitBtn.style.opacity = "0.6";
+  submitBtn.style.cursor = "not-allowed";
+
+  const watchInputs = [
+    fields.depart,
+    fields.arrivee,
+    fields.date,
+    fields.time,
+    fields.passagers,
+    fields.marque,
+    fields.modele,
+    fields.prix,
+    fields.habitual,
+  ];
+
+  watchInputs.forEach((input) => {
+    input.addEventListener("input", enableSubmit);
+    input.addEventListener("change", enableSubmit);
+  });
+
+  function enableSubmit() {
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "1";
+    submitBtn.style.cursor = "pointer";
+  }
+
+  // ====== Soumission ======
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Optionnel : récupérer si c'est un trajet habituel
-    const isHabitual = document.getElementById("habitualRide")?.checked;
+    const data = {
+      depart: fields.depart.value,
+      arrivee: fields.arrivee.value,
+      date: fields.date.value,
+      time: fields.time.value,
+      passagers: fields.passagers.value,
+      marque: fields.marque.value,
+      modele: fields.modele.value,
+      prix: fields.prix.value,
+      habitual: fields.habitual.checked,
+    };
 
-    console.log("🚌 Trajet publié !");
-    console.log("Trajet habituel :", isHabitual ? "Oui" : "Non");
+    console.log("🚗 Données sauvegardées :", data);
+    localStorage.setItem("detailsTrajetConducteur", JSON.stringify(data));
 
-    confirmation.classList.remove("hidden");
-    setTimeout(() => {
-      confirmation.classList.add("hidden");
-    }, 5000);
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.6";
+    submitBtn.style.cursor = "not-allowed";
   });
 
-  // ==== Autocomplétion (optionnel à connecter à une API ou liste) ====
+  // ====== Autocomplétion ======
   const villes = [
     "Alger – Gare Routière Kharrouba",
     "Oran – Gare Routière Est (El Hamri)",
@@ -99,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         li.addEventListener("click", () => {
           input.value = ville;
           suggestBox.innerHTML = "";
+          enableSubmit();
         });
         suggestBox.appendChild(li);
       });

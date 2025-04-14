@@ -1,0 +1,213 @@
+:root {
+  --green: #4caf50;
+  --gray: #d9d9d9;
+  --bg: #fffcf5;
+  --white: #ffffff;
+  --black: #000000;
+  --dark: #333030;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+  background-color: var(--white);
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.header-left a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+}
+
+.logo {
+  height: 30px;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--black);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rechercher {
+  color: rgba(0, 0, 0, 0.7);
+  text-decoration: none;
+}
+
+.publish-btn {
+  color: var(--green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.user-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown {
+  position: absolute;
+  top: 110%; /* Juste en dessous de l'icône */
+  right: 0;
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem;
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.dropdown a:hover {
+  background-color: var(--gray);
+  border-radius: 4px;
+}
+
+.dropdown hr {
+  margin: 0.5rem 0;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Contenu */
+.mes-trajets {
+  padding: 2rem;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.trip-card {
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.trip-card .times {
+  min-width: 120px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.trip-card .cities {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.trip-card .cities strong {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.trip-card .cities small {
+  color: #777;
+  font-size: 0.85rem;
+}
+
+.trip-card .price,
+.trip-card .status {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: right;
+  min-width: 100px;
+}
+
+.status.complet {
+  color: black;
+}
+
+.status.annule {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  .trip-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .trip-card .cities {
+    flex-direction: column;
+  }
+
+  .trip-card .price,
+  .trip-card .status {
+    text-align: left;
+  }
+}
+
+.trip-card {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+.trip-card:hover .delete-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.delete-btn {
+  position: absolute;
+  top: -3px;
+  right: -1px;
+  background-color: transparent;
+  border: none;
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 2;
+}

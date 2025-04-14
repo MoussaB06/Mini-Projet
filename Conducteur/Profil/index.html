@@ -21,10 +21,10 @@
         <div class="user-menu">
           <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
           <div class="dropdown hidden" id="dropdownMenu">
-            <a href="#">👤 Profil</a>
-            <a href="#">🛣️ Vos trajets</a>
+            <a href="../Profil/index.html">👤 Profil</a>
+            <a href="../Mes Trajets/index.html">🛣️ Vos trajets</a>
             <hr />
-            <a href="#" class="logout">↩️ Déconnexion</a>
+            <a href="../../Login/index.html" class="logout">↩️ Déconnexion</a>
           </div>
         </div>
       </div>
@@ -148,6 +148,21 @@
 
       <button class="submit-btn" id="submitBtn">Valider mes Infos</button>
     </main>
+
+    <!-- Popup de notation -->
+    <div id="ratingPopup" class="rating-popup hidden">
+      <div class="popup-content">
+        <h3>Comment s'est passé votre trajet ?</h3>
+        <div class="stars">
+          <span class="star" data-value="1">★</span>
+          <span class="star" data-value="2">★</span>
+          <span class="star" data-value="3">★</span>
+          <span class="star" data-value="4">★</span>
+          <span class="star" data-value="5">★</span>
+        </div>
+        <button id="submitRating" class="submit-btn">Envoyer</button>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

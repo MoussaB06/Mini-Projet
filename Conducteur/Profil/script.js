@@ -61,4 +61,43 @@ document.addEventListener("DOMContentLoaded", () => {
     submitBtn.style.opacity = "0.6";
     submitBtn.style.cursor = "not-allowed";
   });
+  const ratingLine = document.querySelector(".rating-line");
+  const popup = document.getElementById("ratingPopup");
+  const stars = popup.querySelectorAll(".star");
+  const submitRating = document.getElementById("submitRating");
+
+  let selectedRating = 5;
+
+  // Afficher le popup au clic
+  ratingLine.addEventListener("click", () => {
+    popup.classList.remove("hidden");
+    updateStars(selectedRating);
+  });
+
+  // Fermer si on clique en dehors
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.classList.add("hidden");
+    }
+  });
+
+  // Interaction étoile
+  stars.forEach((star) => {
+    star.addEventListener("click", () => {
+      selectedRating = parseInt(star.dataset.value);
+      updateStars(selectedRating);
+    });
+  });
+
+  // Fermer le popup au clic sur envoyer
+  submitRating.addEventListener("click", () => {
+    console.log(`⭐ Noté : ${selectedRating}/5`);
+    popup.classList.add("hidden");
+  });
+
+  function updateStars(value) {
+    stars.forEach((s) => {
+      s.style.color = parseInt(s.dataset.value) <= value ? "gold" : "#ccc";
+    });
+  }
 });

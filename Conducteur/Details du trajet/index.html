@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Publier un trajet | CoVroom</title>
+    <title>Détails du trajet | CoVroom</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -15,9 +15,7 @@
         </a>
       </div>
       <div class="header-right">
-        <a href="../Home/index.html" class="rechercher" id="goSearch"
-          >Rechercher</a
-        >
+        <a href="../Home/index.html" class="rechercher">Rechercher</a>
         <div class="user-menu">
           <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
           <div class="dropdown hidden" id="dropdownMenu">
@@ -31,86 +29,105 @@
     </header>
 
     <main class="create-ride">
-      <h1>Créer un trajet</h1>
+      <h1>Détails du trajet</h1>
       <form id="createRideForm" class="grid-form">
+        <!-- Ligne 1 -->
         <div class="input-block">
           <input
             type="text"
-            placeholder="📍 Départ"
             id="depart"
-            autocomplete="off"
+            placeholder="📍 Départ"
             required
+            autocomplete="off"
           />
           <ul id="suggest-depart" class="suggestions"></ul>
         </div>
-
         <div class="date-heure">
-          <input type="date" required />
-          <input type="time" required />
+          <input type="date" id="date" required />
+          <input type="time" id="time" required />
         </div>
 
+        <!-- Ligne 2 -->
         <div class="input-block">
           <input
             type="text"
-            placeholder="📍 Arrivée"
             id="arrivee"
-            autocomplete="off"
+            placeholder="📍 Arrivée"
             required
+            autocomplete="off"
           />
           <ul id="suggest-arrivee" class="suggestions"></ul>
         </div>
-
         <input
           type="number"
+          id="passagers"
           placeholder="👤 Nombre de passagers"
           min="1"
           required
         />
-        <input type="text" placeholder="🚗 Marque du véhicule" required />
-        <input type="text" placeholder="📘 Modèle du véhicule" required />
 
+        <!-- Marque & modèle -->
+        <input
+          type="text"
+          id="marque"
+          placeholder="🚗 Marque du véhicule"
+          required
+        />
+        <input
+          type="text"
+          id="modele"
+          placeholder="📘 Modèle du véhicule"
+          required
+        />
+
+        <!-- Dropdown confort -->
         <div class="dropdown-block">
           <button type="button" class="dropdown-toggle">
             Niveau de confort
           </button>
           <div class="dropdown-content">
-            <label><input type="checkbox" /> Climatisation</label>
+            <label><input type="checkbox" checked /> Climatisation</label>
             <label><input type="checkbox" /> Sièges inclinables</label>
-            <label><input type="checkbox" /> Prises USB</label>
+            <label><input type="checkbox" checked /> Prises USB</label>
             <label><input type="checkbox" /> Wifi</label>
           </div>
         </div>
 
+        <!-- Dropdown options -->
         <div class="dropdown-block">
           <button type="button" class="dropdown-toggle">
             Options spécifiques
           </button>
           <div class="dropdown-content">
             <label
-              ><input type="checkbox" /> Autorisation de manger/boire</label
+              ><input type="checkbox" checked /> Autorisation de
+              manger/boire</label
             >
             <label><input type="checkbox" /> Musique personnalisée</label>
-            <label><input type="checkbox" /> Animaux acceptés</label>
+            <label><input type="checkbox" checked /> Animaux acceptés</label>
             <label><input type="checkbox" /> Autorisation de fumer</label>
           </div>
         </div>
 
-        <input type="text" placeholder="💰 Prix par personne" required />
+        <!-- Prix -->
+        <input
+          type="text"
+          id="prix"
+          placeholder="💰 Prix par personne"
+          required
+        />
 
-        <!-- ✅ Champ Trajet habituel -->
+        <!-- Trajet habituel -->
         <div class="habitual-checkbox">
           <label>
-            <input type="checkbox" id="habitual-ride" />
-            Trajet habituel
+            <input type="checkbox" id="habituel-ride" /> Trajet habituel
           </label>
         </div>
 
-        <button type="submit" class="submit-btn">Publier le trajet</button>
-
-        <div id="confirmation" class="confirmation hidden">
-          ✅ Trajet publié avec succès !
-          <a href="../Mes Trajets/index.html" class="link">Voir le trajet</a>
-        </div>
+        <!-- Bouton -->
+        <button type="submit" class="submit-btn" id="submitBtn" disabled>
+          Valider le trajet
+        </button>
       </form>
     </main>
 

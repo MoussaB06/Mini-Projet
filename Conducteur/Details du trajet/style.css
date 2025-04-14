@@ -15,26 +15,18 @@
 
 body {
   font-family: Arial, sans-serif;
-  /* background-color: #fffcf5 !important; */
   color: var(--dark);
 }
 
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  /* background-color: var(--bg); */
   border-bottom: 1px solid #ccc;
 }
 
-.header-left {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  color: inherit;
-}
 .header-left a {
   text-decoration: none;
   display: flex;
@@ -62,88 +54,71 @@ header {
 .rechercher {
   color: rgba(0, 0, 0, 0.7);
   font-size: 1rem;
+  text-decoration: none;
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  text-decoration: none;
 }
 
 .rechercher::before {
   content: "🔍";
-  font-size: 1.1rem;
 }
-
-.user-icon {
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 50%;
-  background-color: #ccc;
-  object-fit: cover;
-}
-/* === Panel utilisateur === */
 
 .user-menu {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .user-icon {
-  height: 3.2rem;
   width: 3.2rem;
+  height: 3.2rem;
   border-radius: 50%;
+  object-fit: cover;
   background-color: var(--dark);
   cursor: pointer;
-  object-fit: cover;
 }
 
 .dropdown {
   position: absolute;
   top: calc(100% + 0.5rem);
   right: 0;
-  background-color: #fff;
+  background-color: var(--white);
   border: 1px solid #ccc;
   padding: 0.625rem;
-  border-radius: 0.25rem;
+  border-radius: 5px;
   min-width: 10rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 10;
-  text-align: left;
 }
 
 .dropdown a {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  display: block;
   padding: 0.5rem;
-  text-decoration: none;
   color: var(--dark);
-  font-weight: 500;
+  text-decoration: none;
   font-size: 0.95rem;
-  transition: background 0.2s;
 }
 
 .dropdown a.logout {
   color: red;
-  font-weight: 500;
 }
 
 .dropdown a:hover {
   background-color: var(--gray);
-  border-radius: 0.25rem;
+  border-radius: 4px;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
+/* MAIN */
 main.create-ride {
-  padding: 3rem;
+  padding: 3rem 2rem;
 }
 
 h1 {
   margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 .grid-form {
@@ -155,9 +130,8 @@ h1 {
     "dropdown1 dropdown1"
     "dropdown2 dropdown2"
     "prix prix"
-    "habitual habitual" /* ✅ Ajouté ici */
-    "submit submit"
-    "confirm confirm";
+    "habitual habitual"
+    "submit submit";
   grid-template-columns: 60% 40%;
   gap: 1.5rem;
 }
@@ -165,7 +139,6 @@ h1 {
 .input-block {
   position: relative;
 }
-
 .input-block input {
   width: 100%;
 }
@@ -181,23 +154,20 @@ h1 {
 #arrivee {
   grid-area: arrivee;
 }
-input[type="number"] {
+#passagers {
   grid-area: passagers;
 }
-input[placeholder*="Marque"] {
+#marque {
   grid-area: marque;
 }
-input[placeholder*="Modèle"] {
+#modele {
   grid-area: modele;
 }
-input[placeholder*="Prix"] {
+#prix {
   grid-area: prix;
 }
 .submit-btn {
   grid-area: submit;
-}
-.confirmation {
-  grid-area: confirm;
 }
 .dropdown-block:nth-of-type(1) {
   grid-area: dropdown1;
@@ -223,6 +193,12 @@ input:focus {
   border-color: var(--green);
 }
 
+/* Checkbox personnalisé */
+input[type="checkbox"] {
+  accent-color: var(--green);
+}
+
+/* Dropdowns */
 .dropdown-block {
   position: relative;
 }
@@ -270,51 +246,16 @@ input:focus {
   font-size: 0.95rem;
 }
 
-.dropdown-content input[type="checkbox"] {
-  accent-color: var(--green);
-}
-
-.submit-btn {
-  padding: 1rem 2rem;
-  background-color: var(--green);
-  color: white;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: fit-content;
-}
-
-.confirmation {
-  margin-top: 1rem;
-  padding: 1rem 1.5rem;
-  background-color: #c8facc;
-  color: #000;
-  border-radius: 6px;
+/* Trajet habituel */
+.habitual-checkbox {
+  grid-area: habitual;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  opacity: 1;
-  transition: opacity 0.5s ease;
+  gap: 0.5rem;
+  font-size: 1rem;
 }
 
-.confirmation.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.confirmation .link {
-  color: var(--green);
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.hidden {
-  display: none;
-}
-
-/* Autocomplétion */
+/* Suggestions */
 .suggestions {
   position: absolute;
   top: 100%;
@@ -351,14 +292,44 @@ input:focus {
   margin: 0 !important;
 }
 
-.habitual-checkbox {
-  grid-area: habitual;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 1rem;
+/* Bouton */
+.submit-btn {
+  padding: 1rem 2rem;
+  background-color: var(--green);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  transition: background-color 0.2s ease;
 }
 
-.habitual-checkbox input[type="checkbox"] {
-  accent-color: var(--green); /* ✅ utilise ta couleur verte personnalisée */
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid-form {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "depart"
+      "dateheure"
+      "arrivee"
+      "passagers"
+      "marque"
+      "modele"
+      "dropdown1"
+      "dropdown2"
+      "prix"
+      "habitual"
+      "submit";
+  }
 }
