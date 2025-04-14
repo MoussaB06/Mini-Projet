@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const suggestDepart = document.getElementById("suggest-depart");
   const suggestArrivee = document.getElementById("suggest-arrivee");
 
-  // 🔁 Logique d’autocomplétion
+  // 🔁 Autocomplétion
   function setupAutocomplete(input, suggestionsBox) {
     input.addEventListener("input", function () {
       const val = input.value.toLowerCase();
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Fermer dropdowns si clic en dehors
+  // Fermer dropdowns si clic à l’extérieur
   document.addEventListener("click", function (e) {
     document.querySelectorAll(".dropdown-block").forEach((block) => {
       if (!block.contains(e.target)) {
@@ -89,14 +89,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // ✅ Validation du formulaire + affichage message pendant 5s
+  // ✅ Afficher la confirmation pendant 5 secondes
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-
     confirmation.classList.remove("hidden");
 
     setTimeout(() => {
       confirmation.classList.add("hidden");
     }, 5000);
   });
+
+  // ✅ Panel utilisateur (menu déroulant avatar)
+  const userIcon = document.getElementById("toggleMenu");
+  const dropdown = document.getElementById("dropdownMenu");
+
+  if (userIcon && dropdown) {
+    userIcon.addEventListener("click", () => {
+      dropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!userIcon.contains(e.target) && !dropdown.contains(e.target)) {
+        dropdown.classList.add("hidden");
+      }
+    });
+  }
 });

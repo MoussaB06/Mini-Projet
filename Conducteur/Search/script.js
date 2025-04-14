@@ -1,3 +1,5 @@
+// script.js - Complet pour l'écran Search avec panel utilisateur
+
 document.addEventListener("DOMContentLoaded", () => {
   const tripCards = document.querySelectorAll(".trip-card");
 
@@ -8,7 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.cursor = "pointer";
 
       card.addEventListener("click", () => {
-        // 🧠 Récupération des infos affichées dans la carte
         const times = card.querySelectorAll(".times span");
         const cities = card.querySelectorAll(".cities strong");
         const priceEl = card.querySelector(".price");
@@ -19,18 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
           prix: priceEl?.textContent || "",
           heureDepart: times[0]?.textContent || "",
           heureArrivee: times[2]?.textContent || "",
-          date: "2024-05-10", // (optionnel) : à remplacer dynamiquement si tu ajoutes un champ date
-          passagers: "3", // (temporaire, à remplacer par des vraies données plus tard)
-          marque: "Peugeot", // idem
+          date: "2024-05-10",
+          passagers: "3",
+          marque: "Peugeot",
           modele: "301",
           confort: "Climatisation, USB",
           options: "Musique, Animaux",
         };
 
-        // 💾 Enregistrement dans localStorage
         localStorage.setItem("selectedTrip", JSON.stringify(trajetData));
-
-        // 🔀 Redirection
         window.location.href = "../Reserver Trajet/index.html";
       });
     } else {
@@ -50,5 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("goPublish")?.addEventListener("click", () => {
     window.location.href = "../Publier un trajet/index.html";
+  });
+
+  // === Panel utilisateur déroulant ===
+  const userIcon = document.getElementById("toggleMenu");
+  const dropdown = document.getElementById("dropdownMenu");
+
+  userIcon?.addEventListener("click", () => {
+    dropdown?.classList.toggle("hidden");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!userIcon?.contains(e.target) && !dropdown?.contains(e.target)) {
+      dropdown?.classList.add("hidden");
+    }
   });
 });

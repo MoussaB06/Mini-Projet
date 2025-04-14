@@ -13,9 +13,19 @@
         <span class="brand">CoVroom</span>
       </div>
       <div class="header-right">
-        <span class="rechercher" id="goSearch">Rechercher</span>
+        <a href="../Home/index.html" class="rechercher" id="goSearch"
+          >Rechercher</a
+        >
         <span class="publish-btn" id="goPublish">+ Publier un trajet</span>
-        <img src="../../img/user.png" class="user-icon" />
+        <div class="user-menu">
+          <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
+          <div class="dropdown hidden" id="dropdownMenu">
+            <a href="#">👤 Profil</a>
+            <a href="#">🛣️ Vos trajets</a>
+            <hr />
+            <a href="#" class="logout">↩️ Déconnexion</a>
+          </div>
+        </div>
       </div>
     </header>
 

@@ -3,18 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Créer un trajet | CoVroom</title>
+    <title>Publier un trajet | CoVroom</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <a href="../Home/index.html" class="header-left">
-        <img src="../../img/Logo.png" alt="Logo" class="logo" />
-        <span class="brand">CoVroom</span>
-      </a>
+      <div class="header-left">
+        <a href="../Home/index.html">
+          <img src="../../img/Logo.png" alt="Logo" class="logo" />
+          <span class="brand">CoVroom</span>
+        </a>
+      </div>
       <div class="header-right">
-        <a href="../Home/index.html" class="rechercher">Rechercher</a>
-        <img src="../../img/user.png" class="user-icon" />
+        <a href="../Home/index.html" class="rechercher" id="goSearch"
+          >Rechercher</a
+        >
+        <div class="user-menu">
+          <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
+          <div class="dropdown hidden" id="dropdownMenu">
+            <a href="#">👤 Profil</a>
+            <a href="#">🛣️ Vos trajets</a>
+            <hr />
+            <a href="#" class="logout">↩️ Déconnexion</a>
+          </div>
+        </div>
       </div>
     </header>
 

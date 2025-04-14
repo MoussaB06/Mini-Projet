@@ -14,7 +14,15 @@
       </a>
       <div class="header-right">
         <a href="../Home/index.html" class="rechercher">Rechercher</a>
-        <img src="../../img/user.png" class="user-icon" />
+        <div class="user-menu">
+          <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
+          <div class="dropdown hidden" id="dropdownMenu">
+            <a href="#">👤 Profil</a>
+            <a href="#">🛣️ Vos trajets</a>
+            <hr />
+            <a href="#" class="logout">↩️ Déconnexion</a>
+          </div>
+        </div>
       </div>
     </header>
 
@@ -34,8 +42,8 @@
       <section class="trip-details">
         <h2>Détails du trajet</h2>
         <ul class="detail-list">
-          <li><strong>Départ :</strong> Béjaïa</li>
-          <li><strong>Arrivée :</strong> Alger</li>
+          <li><strong>Départ :</strong> Béjaïa – Gare Routière Tafsout</li>
+          <li><strong>Arrivée :</strong> Alger – Gare Routière Kharrouba</li>
           <li><strong>Date :</strong> 10/05/2024</li>
           <li><strong>Heure :</strong> 06:45</li>
           <li><strong>Nombre de passagers :</strong> 3</li>
@@ -78,7 +86,6 @@
 
         <div id="confirmation" class="confirmation hidden">
           ✅ Trajet réservé avec succès !
-          <a href="../Mes Trajets/index.html" class="link">Voir le trajet</a>
         </div>
       </section>
     </main>

@@ -35,6 +35,13 @@ header {
   text-decoration: none;
   color: inherit;
 }
+.header-left a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+}
 
 .logo {
   height: 30px;
@@ -72,6 +79,63 @@ header {
   border-radius: 50%;
   background-color: #ccc;
   object-fit: cover;
+}
+/* === Panel utilisateur === */
+
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  height: 3.2rem;
+  width: 3.2rem;
+  border-radius: 50%;
+  background-color: var(--dark);
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0.625rem;
+  border-radius: 0.25rem;
+  min-width: 10rem;
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  text-align: left;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.dropdown a.logout {
+  color: red;
+  font-weight: 500;
+}
+
+.dropdown a:hover {
+  background-color: var(--gray);
+  border-radius: 0.25rem;
+}
+
+.hidden {
+  display: none;
 }
 
 main.create-ride {

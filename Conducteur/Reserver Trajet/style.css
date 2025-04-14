@@ -15,7 +15,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--bg);
   color: var(--dark);
 }
 
@@ -25,7 +24,6 @@ header {
   align-items: center;
   padding: 1rem 2rem;
   border-bottom: 1px solid #ccc;
-  background-color: var(--bg);
 }
 
 .header-left {
@@ -43,12 +41,60 @@ header {
   font-weight: bold;
   font-size: 1.2rem;
   color: var(--black);
+  text-decoration: none;
 }
 
 .header-right {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+.user-menu {
+  position: relative;
+}
+
+.user-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  min-width: 160px;
+  z-index: 100;
+}
+
+.dropdown a {
+  display: block;
+  padding: 0.5rem;
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.dropdown a:hover {
+  background-color: var(--gray);
+  border-radius: 5px;
+}
+
+.dropdown hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #ddd;
+}
+
+.hidden {
+  display: none !important;
 }
 
 .rechercher {
@@ -70,8 +116,10 @@ header {
   height: 3.2rem;
   border-radius: 50%;
   object-fit: cover;
+  cursor: pointer;
 }
 
+/* === Contenu principal === */
 main.reservation-page {
   max-width: 900px;
   margin: 2rem auto;
@@ -199,10 +247,6 @@ h1 {
   color: var(--green);
   font-weight: bold;
   text-decoration: none;
-}
-
-.hidden {
-  display: none;
 }
 
 /* Responsive */

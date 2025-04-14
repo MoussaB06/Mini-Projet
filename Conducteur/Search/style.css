@@ -54,6 +54,65 @@ header {
   align-items: center;
   gap: 1.2rem;
 }
+/* PANEL UTILISATEUR */
+.user-menu {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon {
+  width: 3.2rem;
+  height: 3.2rem;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--gray);
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background-color: var(--white);
+  border: 1px solid #ccc;
+  padding: 0.6rem;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--dark);
+  padding: 0.5rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.dropdown a:hover {
+  background-color: var(--gray);
+  border-radius: 4px;
+}
+
+.dropdown a.logout {
+  color: red;
+}
+
+.dropdown hr {
+  margin: 0.5rem 0;
+  border: 0;
+  border-top: 1px solid #ccc;
+}
+
+.hidden {
+  display: none;
+}
 
 .rechercher {
   color: rgba(0, 0, 0, 0.7);

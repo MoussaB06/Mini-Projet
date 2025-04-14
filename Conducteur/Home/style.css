@@ -80,7 +80,7 @@ header {
   position: absolute;
   top: calc(100% + 0.5rem); /* juste en dessous de l’icône */
   right: 0;
-  background-color: var(--bg);
+  background-color: #ffff;
   border: 0.0625rem solid #ccc;
   padding: 0.625rem;
   border-radius: 0.25rem;
