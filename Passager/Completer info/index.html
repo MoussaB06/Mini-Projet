@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Passager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Complétez votre Profil de Passager</h1>
+
+      <!-- Photo de profil -->
+      <div class="profile-photo">
+        <img
+          id="photoPreview"
+          src=""
+          alt="Aperçu"
+          class="photo-preview hidden"
+        />
+        <div id="placeholder" class="avatar-placeholder">👤</div>
+        <label for="photo-upload" class="upload-label"
+          >Charger une photo de profil</label
+        >
+        <input type="file" id="photo-upload" class="hidden" accept="image/*" />
+      </div>
+
+      <p class="experience">Niveau d’expérience : <strong>Débutant</strong></p>
+
+      <!-- Infos personnelles -->
+      <section class="section">
+        <h2>Informations personnelles</h2>
+        <div class="form-group">
+          <input type="text" id="name" placeholder="Nom" />
+          <div class="error-message"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="identity-upload" class="upload-label"
+            >Ajouter une image de Carte d'identité</label
+          >
+          <input
+            type="file"
+            id="identity-upload"
+            class="hidden"
+            accept="image/*"
+          />
+          <div id="identityPreview" class="preview-grid"></div>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="phone" placeholder="Numéro de téléphone" />
+          <div class="error-message"></div>
+        </div>
+
+        <!-- <div class="form-group">
+          <label for="permit-upload" class="upload-label"
+            >Ajouter une image du Permis de conduire</label
+          >
+          <input
+            type="file"
+            id="permit-upload"
+            class="hidden"
+            accept="image/*"
+          />
+          <div id="permitPreview" class="preview-grid"></div>
+        </div> -->
+      </section>
+
+      <!-- Véhicule -->
+      <!-- <section class="section">
+        <h2>Détails du véhicule</h2>
+
+        <div class="form-group">
+          <label for="registration-upload" class="upload-label"
+            >Ajouter une image de la Carte grise</label
+          >
+          <input
+            type="file"
+            id="registration-upload"
+            class="hidden"
+            accept="image/*"
+          />
+          <div id="registrationPreview" class="preview-grid"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="insurance-upload" class="upload-label"
+            >Ajouter une preuve d’assurance</label
+          >
+          <input
+            type="file"
+            id="insurance-upload"
+            class="hidden"
+            accept="image/*"
+          />
+          <div id="insurancePreview" class="preview-grid"></div>
+        </div>
+
+        <div class="inline-fields">
+          <div class="form-group">
+            <input type="text" id="brand" placeholder="Marque" />
+            <div class="error-message"></div>
+          </div>
+          <div class="form-group">
+            <input type="text" id="model" placeholder="Modèle" />
+            <div class="error-message"></div>
+          </div>
+        </div>
+
+        <label for="vehicle-upload" class="upload-label"
+          >Ajouter des images du véhicule</label
+        >
+        <input
+          type="file"
+          id="vehicle-upload"
+          class="hidden"
+          accept="image/*"
+          multiple
+        />
+        <div id="vehiclePreview" class="preview-grid"></div>
+      </section> -->
+
+      <button class="submit-btn" id="submitBtn">Valider mes Infos</button>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
