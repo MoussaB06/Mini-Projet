@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Résultats de recherche | CoVroom</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left" id="goHome" style="cursor: pointer">
+        <img src="../../img/Logo.png" alt="Logo" class="logo" />
+        <span class="brand">CoVroom</span>
+      </div>
+      <div class="header-right">
+        <!-- <a href="../Home/index.html" class="rechercher" id="goSearch"
+          >Rechercher</a
+        >
+        <span class="publish-btn" id="goPublish">+ Publier un trajet</span> -->
+        <div class="user-menu">
+          <img src="../../img/user.png" class="user-icon" id="toggleMenu" />
+          <div class="dropdown hidden" id="dropdownMenu">
+            <a href="../Profil/index.html">👤 Profil</a>
+            <!-- <a href="../Mes Trajets/index.html">🛣️ Vos trajets</a> -->
+            <hr />
+            <a href="../../Login/index.html" class="logout">↩️ Déconnexion</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="search-container">
+      <aside class="sidebar">
+        <h2>Trier par</h2>
+        <div class="filter-group">
+          <h3>Niveau confort</h3>
+          <label><input type="checkbox" /> Climatisation</label>
+          <label><input type="checkbox" /> Sièges inclinables</label>
+          <label><input type="checkbox" /> Prises USB</label>
+          <label><input type="checkbox" /> Wifi</label>
+        </div>
+        <div class="filter-group">
+          <h3>Options spécifiques</h3>
+          <label><input type="checkbox" /> Autorisation de manger/boire</label>
+          <label><input type="checkbox" /> Musique Personnalisée</label>
+          <label><input type="checkbox" /> Animaux acceptés</label>
+          <label><input type="checkbox" /> Autorisation de Fumer</label>
+        </div>
+        <div class="filter-group">
+          <h3>Genre de trajet</h3>
+          <label><input type="checkbox" /> Trajet habituel</label>
+        </div>
+      </aside>
+
+      <main class="results">
+        <div class="trip-card" data-status="active">
+          <div class="times">
+            <span>6:45</span><span>—— 9h30 ——</span><span>12:00</span>
+          </div>
+          <div class="cities">
+            <div><strong>Alger</strong><br /><small>Kharrouba</small></div>
+            <div><strong>Béjaïa</strong><br /><small>Centre-ville</small></div>
+          </div>
+          <div class="price">1000 DA</div>
+        </div>
+
+        <div class="trip-card" data-status="complet">
+          <div class="times">
+            <span>7:30</span><span>—— 11h00 ——</span><span>13:15</span>
+          </div>
+          <div class="cities">
+            <div><strong>Oran</strong><br /><small>Gare Est</small></div>
+            <div><strong>Tlemcen</strong><br /><small>Centre-ville</small></div>
+          </div>
+          <div class="status complet">Complet</div>
+        </div>
+
+        <div class="trip-card" data-status="annule">
+          <div class="times">
+            <span>9:10</span><span>—— 12h20 ——</span><span>14:30</span>
+          </div>
+          <div class="cities">
+            <div>
+              <strong>Constantine</strong><br /><small>Sidi Mabrouk</small>
+            </div>
+            <div><strong>Annaba</strong><br /><small>El-Hadjar</small></div>
+          </div>
+          <div class="status annule">Annulé</div>
+        </div>
+
+        <div class="trip-card" data-status="active">
+          <div class="times">
+            <span>10:00</span><span>—— 13h00 ——</span><span>15:30</span>
+          </div>
+          <div class="cities">
+            <div><strong>Sétif</strong><br /><small>El Eulma</small></div>
+            <div><strong>Batna</strong><br /><small>Centre-ville</small></div>
+          </div>
+          <div class="price">1500 DA</div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

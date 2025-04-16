@@ -262,3 +262,37 @@ h1 {
     text-align: center;
   }
 }
+
+#status {
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  padding: 0.6rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  width: fit-content;
+}
+
+#status.complet {
+  color: red;
+  background-color: var(--bg);
+  border-color: red;
+}
+
+.reset-btn {
+  margin-top: 1rem;
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.reset-btn:hover {
+  opacity: 0.85;
+}

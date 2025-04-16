@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (selected.value === "conducteur") {
       window.location.href = "../Conducteur/Completer info/index.html";
     } else if (selected.value === "passager") {
-      window.location.href = "../Passager/index.html"; // à créer plus tard
+      window.location.href = "../Passager/Completer info/index.html"; // à créer plus tard
     }
   });
 });

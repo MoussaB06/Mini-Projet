@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!valid) {
       e.preventDefault();
     } else {
-      alert("Formulaire soumis !");
+      // alert("Formulaire soumis !");
       window.location.href = "../Home/index.html";
     }
   });
