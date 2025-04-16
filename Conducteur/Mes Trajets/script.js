@@ -2,25 +2,40 @@ document.addEventListener("DOMContentLoaded", () => {
   const userIcon = document.getElementById("toggleMenu");
   const dropdown = document.getElementById("dropdownMenu");
 
-  const deleteButtons = document.querySelectorAll(".delete-btn");
+  const modalOverlay = document.getElementById("modalOverlay");
+  const confirmBtn = document.getElementById("confirmDelete");
+  const cancelBtn = document.getElementById("cancelDelete");
 
-  deleteButtons.forEach((btn) => {
+  let cardToDelete = null;
+
+  document.querySelectorAll(".delete-btn").forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      e.stopPropagation(); // Évite de déclencher d'autres clics
-      const card = btn.closest(".trip-card");
-      card.remove(); // Supprime la carte
+      e.stopPropagation();
+      cardToDelete = btn.closest(".trip-card");
+      modalOverlay.classList.remove("hidden");
     });
   });
 
-  // Toggle du menu uniquement au clic sur l'icône
+  confirmBtn.addEventListener("click", () => {
+    if (cardToDelete) {
+      cardToDelete.remove();
+      cardToDelete = null;
+    }
+    modalOverlay.classList.add("hidden");
+  });
+
+  cancelBtn.addEventListener("click", () => {
+    modalOverlay.classList.add("hidden");
+    cardToDelete = null;
+  });
+
+  // Toggle menu
   userIcon?.addEventListener("click", (e) => {
-    e.stopPropagation(); // ⛔ n'envoie pas l'événement plus loin
+    e.stopPropagation();
     dropdown.classList.toggle("hidden");
   });
 
-  // Clique en dehors → fermer le menu
   document.addEventListener("click", (e) => {
-    // Vérifie qu'on ne clique pas ni sur le menu ni sur l'icône
     if (!dropdown.contains(e.target) && !userIcon.contains(e.target)) {
       dropdown.classList.add("hidden");
     }

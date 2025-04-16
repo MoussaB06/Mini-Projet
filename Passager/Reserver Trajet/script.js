@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // ===== Panel utilisateur =====
   const userIcon = document.getElementById("toggleMenu");
   const dropdown = document.getElementById("dropdownMenu");
 
@@ -14,21 +15,33 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ===== Récupération des infos du trajet depuis localStorage =====
+  const tripData = JSON.parse(localStorage.getItem("selectedTrip"));
+  const trajetId = tripData?.id || "trajet_001"; // ID unique, transmis depuis Search
+
+  const key = `reservations_${trajetId}`;
+  const passagerMax = parseInt(tripData?.passagers || "3");
+  let reservedCount = parseInt(localStorage.getItem(key)) || 0;
+
+  const statusDiv = document.getElementById("status");
   const reserveBtn = document.getElementById("reserveBtn");
   const confirmation = document.getElementById("confirmation");
-  const statusDiv = document.getElementById("status");
-  const passagerMax = parseInt(
-    document.getElementById("passagers").textContent
-  );
 
-  const trajetId = "trajet_001";
-  const key = `reservations_${trajetId}`;
+  // Remplir les infos dans l'écran
+  if (tripData) {
+    document.getElementById("depart").textContent = tripData.depart;
+    document.getElementById("arrivee").textContent = tripData.arrivee;
+    document.getElementById("date").textContent = tripData.date;
+    document.getElementById("heure").textContent = tripData.heureDepart;
+    document.getElementById("passagers").textContent = tripData.passagers;
+    document.getElementById("marque").textContent = tripData.marque;
+    document.getElementById("modele").textContent = tripData.modele;
+    document.getElementById("prix").textContent = tripData.prix;
+  }
 
-  // 🧹 Réinitialiser à chaque rafraîchissement
-  localStorage.removeItem(key);
-
-  // On redémarre à zéro
-  let reservedCount = 0;
+  // 🔁 Réinitialisation automatique des réservations à chaque chargement
+  localStorage.setItem(key, "0");
+  reservedCount = 0;
 
   function updateStatus() {
     if (reservedCount >= passagerMax) {
@@ -57,9 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       confirmation.classList.remove("hidden");
       setTimeout(() => {
         confirmation.classList.add("hidden");
-      }, 5000);
+      }, 4000);
     }
   });
-
-  console.log("🔁 Réservations remises à zéro. Passagers max :", passagerMax);
 });

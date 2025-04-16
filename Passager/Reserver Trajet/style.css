@@ -280,19 +280,3 @@ h1 {
   background-color: var(--bg);
   border-color: red;
 }
-
-.reset-btn {
-  margin-top: 1rem;
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  border-radius: 5px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: opacity 0.2s ease;
-}
-
-.reset-btn:hover {
-  opacity: 0.85;
-}

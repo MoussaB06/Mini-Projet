@@ -28,29 +28,47 @@
 
     <main class="reservation-page">
       <h1>Réserver un trajet</h1>
-      <p class="subtitle">Publier par :</p>
+      <p class="subtitle">Publié par :</p>
 
-      <a class="driver-card" href="../Profil/index.html">
-        <img src="../../img/user.png" alt="Photo profil" />
+      <a
+        class="driver-card"
+        href="../../Conducteur/Profil/index.html"
+        id="driverLink"
+      >
+        <img src="../../img/user.png" alt="Photo du conducteur" />
         <div class="info">
-          <strong>Full Name</strong>
-          <p>Niveau d’expérience : Débutant</p>
-          <span>⭐ 4.9/5 - 1 avis</span>
+          <strong id="driverName">Moussa Mohamed</strong>
+          <p>Niveau d’expérience : <span id="driverLevel">Confirmé</span></p>
+          <span
+            >⭐ <span id="driverRating">4.9</span>/5 -
+            <span id="driverReviews">1</span> avis</span
+          >
         </div>
       </a>
 
       <section class="trip-details">
         <h2>Détails du trajet</h2>
         <ul class="detail-list">
-          <li><strong>Départ :</strong> Béjaïa – Gare Routière Tafsout</li>
-          <li><strong>Arrivée :</strong> Alger – Gare Routière Kharrouba</li>
-          <li><strong>Date :</strong> 10/05/2024</li>
-          <li><strong>Heure :</strong> 06:45</li>
-          <li><strong>Nombre de passagers :</strong> 3</li>
-          <li><strong>Marque :</strong> Peugeot</li>
-          <li><strong>Modèle :</strong> 301</li>
-          <li><strong>Prix :</strong> 1000 DA</li>
+          <li>
+            <strong>Départ :</strong>
+            <span id="depart">Béjaïa – Gare Routière Tafsout</span>
+          </li>
+          <li>
+            <strong>Arrivée :</strong>
+            <span id="arrivee">Alger – Gare Routière Kharrouba</span>
+          </li>
+          <li><strong>Date :</strong> <span id="date">10/05/2024</span></li>
+          <li><strong>Heure :</strong> <span id="heure">06:45</span></li>
+          <li>
+            <strong>Nombre de passagers :</strong> <span id="passagers">3</span>
+          </li>
+          <li><strong>Marque :</strong> <span id="marque">Peugeot</span></li>
+          <li><strong>Modèle :</strong> <span id="modele">301</span></li>
+          <li><strong>Prix :</strong> <span id="prix">1000 DA</span></li>
         </ul>
+
+        <!-- Statut dynamique -->
+        <!-- <div id="status" class="status"></div> -->
 
         <div class="dropdown-block open">
           <button type="button" class="dropdown-toggle">
@@ -82,11 +100,18 @@
           </div>
         </div>
 
+        <!-- ... (ton HTML d'avant inchangé) -->
         <button id="reserveBtn" class="submit-btn">Réserver</button>
+        <div id="status" class="status"></div>
 
         <div id="confirmation" class="confirmation hidden">
           ✅ Trajet réservé avec succès !
         </div>
+
+        <!-- ✅ Bouton de test pour reset -->
+        <!-- <button id="resetBtn" class="reset-btn">
+          🔄 Réinitialiser les réservations
+        </button> -->
       </section>
     </main>
 

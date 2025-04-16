@@ -41,15 +41,15 @@
           </div>
           <div class="cities">
             <div>
-              <strong>Paris</strong>
-              <small>Gare routière Bercy-seine</small>
+              <strong>cheraga</strong>
+              <small>Gare routière cheraga</small>
             </div>
             <div>
-              <strong>Marseille</strong>
-              <small>Gare routière Saint-charles</small>
+              <strong>batna</strong>
+              <small>Gare routière batna</small>
             </div>
           </div>
-          <div class="price">29.99$</div>
+          <div class="price">9.99$</div>
         </div>
 
         <div class="trip-card" data-status="complet">
@@ -59,16 +59,50 @@
           </div>
           <div class="cities">
             <div>
-              <strong>Lyon</strong><small>Gare routière Bercy-seine</small>
+              <strong>blida</strong><small>Gare routière centrale</small>
             </div>
             <div>
-              <strong>Palermo</strong><small>Gare routière Saint-charles</small>
+              <strong>ourgla</strong><small>Gare routière ouergla</small>
             </div>
           </div>
           <div class="status complet">Complet</div>
         </div>
+        <div class="trip-card" data-status="active">
+          <button class="delete-btn" title="Supprimer le trajet">✖</button>
+          <div class="times">
+            <span>7:30</span> <span>--------</span> <span>18:40</span>
+          </div>
+          <div class="cities">
+            <div>
+              <strong>Bejaia</strong>
+              <small>Gare routière central</small>
+            </div>
+            <div>
+              <strong>Oran</strong>
+              <small>Gare routière d'oran</small>
+            </div>
+          </div>
+          <div class="price">29.99$</div>
+        </div>
+        <div class="trip-card" data-status="active">
+          <button class="delete-btn" title="Supprimer le trajet">✖</button>
+          <div class="times">
+            <span>7:30</span> <span>--------</span> <span>18:40</span>
+          </div>
+          <div class="cities">
+            <div>
+              <strong>Annaba</strong>
+              <small>Gare routière annaba</small>
+            </div>
+            <div>
+              <strong>alger</strong>
+              <small>Gare routière centrale</small>
+            </div>
+          </div>
+          <div class="price">10.99$</div>
+        </div>
 
-        <div class="trip-card" data-status="annule">
+        <!-- <div class="trip-card" data-status="annule">
           <button class="delete-btn" title="Supprimer le trajet">✖</button>
           <div class="times"><span>4:45 </span>--------<span> 16:00</span></div>
           <div class="cities">
@@ -80,9 +114,19 @@
             </div>
           </div>
           <div class="status annule">Annulé</div>
-        </div>
+        </div> -->
       </main>
     </main>
+    <!-- Modal de confirmation -->
+    <div class="modal-overlay hidden" id="modalOverlay">
+      <div class="modal">
+        <p>Êtes-vous sûr de vouloir supprimer ce trajet ?</p>
+        <div class="modal-actions">
+          <button id="confirmDelete" class="modal-confirm">Oui</button>
+          <button id="cancelDelete" class="modal-cancel">Non</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
