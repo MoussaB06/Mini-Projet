@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Admin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="../../img/Logo.png" alt="Logo" class="logo" />
+        <span class="brand">CoVroom</span>
+      </div>
+    </header>
+
+    <main class="dashboard">
+      <aside class="sidebar">
+        <label for="upload" class="profile-img-container">
+          <img
+            src="../../img/user.png"
+            alt="admin"
+            class="profile-img"
+            id="profileImage"
+          />
+          <input
+            type="file"
+            id="upload"
+            accept="image/*"
+            style="display: none"
+          />
+        </label>
+
+        <h2>Mohamed Moussa</h2>
+      </aside>
+
+      <section class="dashboard-main">
+        <h1>Salut Moussa!</h1>
+        <div class="stats">
+          <div
+            class="stat-card"
+            onclick="location.href='../Utillisateurs/index.html'"
+          >
+            <p>Utilisateurs</p>
+            <h2>200</h2>
+          </div>
+          <div
+            class="stat-card"
+            onclick="location.href='../Trajets/index.html'"
+          >
+            <p>Trajets</p>
+            <h2>50</h2>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

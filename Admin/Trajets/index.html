@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trajets - Admin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="header-left" href="../Dashboard/index.html">
+        <img src="../../img/Logo.png" alt="Logo" class="logo" />
+        <span class="brand">CoVroom</span>
+      </a>
+    </header>
+
+    <main class="container">
+      <h1>Trajets</h1>
+      <table class="trajet-table">
+        <thead>
+          <tr>
+            <th>Départ</th>
+            <th>Arrivée</th>
+            <th>Date</th>
+            <th>Conducteur</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="trajet-1">
+            <td>Alger</td>
+            <td>Oran</td>
+            <td>30/04/2025</td>
+            <td>Moussa</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+          <tr data-id="trajet-2">
+            <td>Alger</td>
+            <td>Oran</td>
+            <td>30/04/2025</td>
+            <td>Moussa</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+          <tr data-id="trajet-3">
+            <td>Alger</td>
+            <td>Oran</td>
+            <td>30/04/2025</td>
+            <td>Moussa</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+          <tr data-id="trajet-4">
+            <td>Alger</td>
+            <td>Oran</td>
+            <td>30/04/2025</td>
+            <td>Moussa</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+
+          <!-- répète pour d'autres lignes -->
+        </tbody>
+
+        <!-- MODAL -->
+        <div class="modal hidden" id="modal">
+          <div class="modal-content">
+            <p>Souhaitez-vous autoriser ce trajet ?</p>
+            <button id="autoriserBtn">✅ Autoriser</button>
+          </div>
+        </div>
+      </table>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

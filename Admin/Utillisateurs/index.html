@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utilisateurs - Admin</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="header-left" href="../Dashboard/index.html">
+        <img src="../../img/Logo.png" alt="Logo" class="logo" />
+        <span class="brand">CoVroom</span>
+      </a>
+    </header>
+
+    <main class="container">
+      <h1>Utilisateurs</h1>
+      <table class="user-table">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Email</th>
+            <th>Numéro</th>
+            <th>Rôle</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-id="user-1">
+            <td class="truncate" title="Benmouhoub Mohamed Moussa">
+              Benmouhoub Mohamed...
+            </td>
+            <td>Moussa@gmail.com</td>
+            <td>056789435</td>
+            <td>Passager</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+          <tr data-id="user-2">
+            <td class="truncate" title="kassa yasmine fatiha">
+              kassa yasmine...
+            </td>
+            <td>Yasmine@gmail.com</td>
+            <td>056789435</td>
+            <td>Conducteur</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+          <tr data-id="user-3">
+            <td class="truncate" title="benakouche mohamed aymen">
+              benakouche mohamed...
+            </td>
+            <td>Aymen@gmail.com</td>
+            <td>056789435</td>
+            <td>Passager</td>
+            <td class="action-cell">
+              <span class="status bloqué">Bloqué</span>
+              <span class="icon">❌</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+
+    <!-- MODAL -->
+    <div class="modal hidden" id="modal">
+      <div class="modal-content">
+        <p>Souhaitez-vous autoriser cet utilisateur ?</p>
+        <button id="autoriserBtn">✅ Autoriser</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
