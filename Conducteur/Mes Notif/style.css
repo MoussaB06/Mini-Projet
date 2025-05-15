@@ -2,7 +2,7 @@
   --green: #4caf50;
   --green-light: #8bd78f;
   --gray: #d9d9d9;
-  --bg: #fffcf5;
+  --bg: #fff;
   --black: #000000;
   --dark: #333030;
   --white: #ffffff;
@@ -123,18 +123,22 @@ header {
 
 .container {
   padding: 2rem;
-}
-
-h2 {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .notif-block {
+  width: 60%;
   background-color: var(--white);
   border: 1px solid var(--gray);
   border-radius: 0.25rem;
   margin-bottom: 1.5rem;
   padding: 1rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
 }
 
 .notif-header {
@@ -147,14 +151,80 @@ h2 {
 
 .notif-item {
   margin: 0.5rem 0;
-  display: block;
-  text-decoration: none;
-  color: var(--dark);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--white);
   padding: 0.4rem;
   border-radius: 0.25rem;
   transition: background 0.2s;
 }
 
+.notif-item a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
 .notif-item:hover {
   background-color: var(--gray);
+}
+
+.notif-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.notif-actions button {
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.notif-actions button:hover {
+  transform: scale(1.2);
+}
+
+.validate {
+  color: green;
+}
+
+.reject {
+  color: red;
+}
+
+.notif-actions {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.notif-item:hover .notif-actions {
+  opacity: 1;
+}
+
+.toast-message {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: var(--white);
+  color: var(--dark);
+  border: 1px solid var(--gray);
+  border-left: 5px solid var(--green);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+  font-weight: bold;
+}
+
+.toast-message.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
