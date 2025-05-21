@@ -1,0 +1,12 @@
+Array
+(
+    [nom] => blabla
+    [telephone] => 0678765645
+    [marque_vehicule] => Volkswagen
+    [modele_vehicule] => Golf
+    [photo] => undefined
+    [carte_identite] => undefined
+    [permis] => undefined
+    [carte_grise] => undefined
+    [assurance] => undefined
+)
