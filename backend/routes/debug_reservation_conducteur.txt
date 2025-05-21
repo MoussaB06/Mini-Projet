@@ -1,0 +1,10 @@
+Array
+(
+    [session_user_id] => 29
+    [input] => Array
+        (
+            [trajet_id] => 10
+            [nb_places] => 1
+        )
+
+)

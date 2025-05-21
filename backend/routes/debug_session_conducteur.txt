@@ -1,0 +1,19 @@
+Array
+(
+    [csrf_token] => a8062a0a94df3e1270b0e8f73a5ff8242d6eba2fd8e1ac4062f84085a71bef66
+    [user] => Array
+        (
+            [id] => 29
+            [nom] => asmaa
+            [email] => asmaa@gmail.com
+            [role] => passager
+        )
+
+    [user_id] => 21
+    [auth_message] => Array
+        (
+            [text] => Inscription réussie !
+            [type] => success
+        )
+
+)

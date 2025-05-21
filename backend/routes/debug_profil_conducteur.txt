@@ -1,0 +1,24 @@
+Array
+(
+    [SESSION] => Array
+        (
+            [csrf_token] => a8062a0a94df3e1270b0e8f73a5ff8242d6eba2fd8e1ac4062f84085a71bef66
+            [user] => Array
+                (
+                    [id] => 7
+                    [nom] => blabla
+                    [email] => blabal@gmail.com
+                    [role] => passager
+                )
+
+            [user_id] => 7
+            [auth_message] => Array
+                (
+                    [text] => Connexion réussie !
+                    [type] => success
+                )
+
+        )
+
+    [user_id] => 7
+)

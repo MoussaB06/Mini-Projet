@@ -1,0 +1,7 @@
+Array
+(
+    [depart] => Alger – Gare Routière Kharrouba
+    [arrivee] => Blida – Gare Routière Centre-ville
+    [date] => 2025-05-21
+    [passagers] => 2
+)
